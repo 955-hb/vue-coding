@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nonReactive-vs-Reactive</title>
+  </head>
+  <body>
+    <h3>with Vue</h3>
+    <div id="app">
+      <form id="add-fruit-form" @submit.prevent="addFruit">
+        <fieldset>
+          <legend>Add fruit</legend>
+          <label for="fruit_name">Name</label>
+          <input id="fruit_name" name="fruit_name" />
+          <button>Add</button>
+        </fieldset>
+      </form>
+      <h1>Fruits</h1>
+      <ul id="fruit-list">
+        <li v-for="fruit in fruits" :key="fruit">{{ fruit }}</li>
+      </ul>
+    </div>
+
+    <script src="./scriptVue.js"></script>
+  </body>
+</html>
