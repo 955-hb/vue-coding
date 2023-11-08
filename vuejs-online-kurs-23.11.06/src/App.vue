@@ -11,6 +11,7 @@
     {{ age >= 18 ? 'volljährig' : 'nicht volljährig' }} 
     <hr><hr>
 
+    <!-- direktiven, conditional rendering & v-show -->
     <div class="age">
       {{ age }}
       <span v-if="age < 18"> Du bist unter 18!</span>
@@ -19,6 +20,9 @@
     </div>
     <hr><hr>
     <div v-show="firstName === 'Hannes'">Hallo {{firstName}}!</div>
+    <hr><hr>
+
+    <!-- List Rendering Vue JS v-for -->
 
   </div>
 </template>
