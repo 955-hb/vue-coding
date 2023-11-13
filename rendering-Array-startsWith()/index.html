@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rendering-Array-startsWith()</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>Fruits in the basket</h1>
+        <h2>Filter:</h2>
+        <button @click="startsWithLetter = ''">All</button>&nbsp;
+        <button @click="startsWithLetter = 'A'">A</button>&nbsp;
+        <button @click="startsWithLetter = 'B'">B</button>
+        <ul>
+          <li v-for="fruit in dynamicFruitList" :key="fruit">
+            {{ fruit }}
+          </li>
+        </ul>
+      </div>
+
+
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./vue.js"></script>
+</body>
+</html>
