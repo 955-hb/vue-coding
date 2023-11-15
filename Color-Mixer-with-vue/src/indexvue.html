@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>color Mixer mit vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="flex-container">
+        <div class="range-container">
+          <!-- red slider -->
+          <div class="div-red">
+            <label for="red"><strong>r</strong></label>
+            <input
+              v-model="red"
+              type="range"
+              id="red"
+              step="1"
+              min="0"
+              max="255"
+              
+            />
+          </div>
+
+          <!-- green slider -->
+          <div class="div-green">
+            <label for="green"><strong>g</strong></label>
+            <input
+              v-model="green"
+              type="range"
+              id="green"
+              step="1"
+              min="0"
+              max="255"
+              
+            />
+          </div>
+
+          <!-- blue slider -->
+          <div class="div-blue">
+            <label for="blue"><strong>b</strong></label>
+            <input
+              v-model="blue"
+              type="range"
+              id="blue"
+              step="1"
+              min="0"
+              max="255"
+            />
+          </div>
+        </div>
+
+        <p
+          id="color-value"
+          aria-placeholder="test"
+          :style="backgroundColor"
+        ></p>
+      </header>
+
+      <p>{{red}}</p>
+      <p>{{green}}</p>
+      <p>{{blue}}</p>
+
+      <p>{{hexColor}}</p>
+
+      <main>
+        <button @click="getRandomColor()" class="btn-random">
+          Random Color
+        </button>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./scriptvue.js"></script>
+  </body>
+</html>
