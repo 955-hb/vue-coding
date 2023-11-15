@@ -1,4 +1,3 @@
-//slider
 const redSlider = document.querySelector("#red");
 const greenSlider = document.querySelector("#green");
 const blueSlider = document.querySelector("#blue");
@@ -22,12 +21,13 @@ function rangeValueToHex(value) {
 
 document.body.addEventListener("input", setBackgroundColor);
 
-const app = Vue.createApp({
-  data() {
-    return {
-      hexValue: colorValue
-      
-    };
-  },
-}).mount("#app");
-
+document.querySelector("button").addEventListener("click", function () {
+  fetch("https://dummy-apis.netlify.app/api/color")
+    .then((req) => req.json())
+    .then((color) => {
+      redSlider.value = color.rgb.r;
+      greenSlider.value = color.rgb.g;
+      blueSlider.value = color.rgb.b;
+      setBackgroundColor();
+    });
+});
